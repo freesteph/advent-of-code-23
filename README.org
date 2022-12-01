@@ -1,0 +1,41 @@
+* advent-of-code-2023
+** Description
+Advent of code 2023
+** Day 1
+
+*** Ruby
+#+NAME: solution-ruby-day-1
+#+begin_src ruby
+input = File.read("./inputs/day1")
+
+provisions = input
+               .split("\n\n")
+               .map { |group| group.lines.map(&:to_i) }
+               .map(&:sum)
+               .max
+#+end_src
+
+#+RESULTS: solution-ruby-day-1
+: 69310
+
+#+NAME: solution-ruby-day-1-pt2
+#+begin_src ruby
+input = File.read("./inputs/day1")
+
+provisions = input
+               .split("\n\n")
+               .map { |group| group.lines.map(&:to_i) }
+               .map(&:sum)
+               .max(3).sum
+#+end_src
+
+#+RESULTS: solution-ruby-day-1-pt2
+: 206104
+
+*** Lisp
+#+NAME: solution-lisp-day-1
+#+begin_src emacs-lisp :var input=input-day-1
+(let ((groups (split-string input "\n\n"))))
+#+end_src
+
+#+RESULTS: solution-lisp-day-1
